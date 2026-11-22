@@ -1,0 +1,133 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e9edf4;
+  background: #090b10;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+body {
+  background:
+    radial-gradient(circle at 82% 12%, rgba(225, 6, 0, .09), transparent 23rem),
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    #090b10;
+  background-size: auto, 100% 48px, auto;
+}
+
+main { max-width: 1440px; min-height: 100vh; margin: auto; }
+.nav {
+  height: 76px; display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; padding: 0 44px; border-bottom: 1px solid #20242d;
+}
+.brand { font-weight: 900; letter-spacing: .08em; }
+.brand-mark {
+  display: inline-grid; place-items: center; width: 38px; height: 38px;
+  margin-right: 10px; background: #e10600; color: white; border-radius: 2px;
+  transform: skew(-8deg); font-size: 15px;
+}
+.year-switch { display: flex; background: #11141b; border: 1px solid #252a35; border-radius: 6px; padding: 3px; }
+.year-switch button { border: 0; background: transparent; color: #7f8796; padding: 8px 14px; border-radius: 4px; }
+.year-switch button.active { background: #e10600; color: white; }
+.signin {
+  justify-self: end; border: 1px solid #343945; background: #12151b;
+  color: #f2f4f8; border-radius: 5px; padding: 9px 13px;
+}
+
+.hero {
+  min-height: 238px; display: flex; align-items: end; justify-content: space-between;
+  padding: 44px 44px 38px;
+}
+.eyebrow { margin: 0 0 10px; color: #e10600; font-size: 11px; font-weight: 900; letter-spacing: .18em; }
+.hero h1 { margin: 0; font-size: clamp(42px, 6vw, 74px); line-height: .92; letter-spacing: -.055em; }
+.hero h1 em { color: #777f8e; font-style: normal; }
+.hero-stat { display: grid; text-align: right; }
+.hero-stat span { color: #e10600; font-size: 68px; line-height: 1; font-weight: 900; }
+.hero-stat small { color: #747d8b; letter-spacing: .16em; margin-top: 8px; }
+
+.notice { margin: 0 44px 20px; border-left: 3px solid #e10600; background: #151820; padding: 12px 16px; color: #adb4c1; }
+.notice code { color: #fff; }
+.notice.error { color: #ffaaa5; }
+
+.layout { display: grid; grid-template-columns: 285px 1fr; border-top: 1px solid #20242d; min-height: 500px; }
+.layout aside { border-right: 1px solid #20242d; padding: 24px 18px; }
+.section-title { color: #747d8b; font-size: 10px; font-weight: 900; letter-spacing: .18em; margin: 0 8px 14px; }
+.race-list { display: grid; gap: 6px; }
+.race-card {
+  display: grid; grid-template-columns: 38px 1fr auto; align-items: center;
+  width: 100%; min-height: 66px; text-align: left; border: 1px solid transparent;
+  background: transparent; color: #e9edf4; border-radius: 5px; padding: 8px;
+}
+.race-card:hover { background: #11141b; }
+.race-card.active { background: #171a21; border-color: #343945; box-shadow: inset 3px 0 #e10600; }
+.race-card strong, .race-card small { display: block; }
+.race-card strong { font-size: 14px; }
+.race-card small { color: #7c8492; margin-top: 4px; font-size: 11px; }
+.round { color: #596170; font-size: 11px; }
+.flag { color: #e10600; font-size: 9px; font-weight: 900; }
+.loading, .empty { color: #747d8b; padding: 20px 8px; font-size: 13px; }
+
+.content { min-width: 0; }
+.race-header {
+  min-height: 190px; display: flex; align-items: end; justify-content: space-between;
+  padding: 38px 44px 28px; border-bottom: 1px solid #20242d;
+  background: linear-gradient(100deg, rgba(255,255,255,.018), transparent 60%);
+}
+.race-header h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.04em; }
+.race-header p:last-child { color: #858d9b; margin: 8px 0 0; }
+.lap-record { text-align: right; display: grid; }
+.lap-record strong { font-size: 42px; color: #fff; }
+.lap-record strong span { color: #e10600; font-size: 18px; margin-left: 3px; }
+.lap-record small { color: #747d8b; letter-spacing: .12em; }
+
+.challenge {
+  margin: 26px 44px; display: flex; align-items: end; justify-content: space-between;
+  background: #11141b; border: 1px solid #252a35; border-radius: 8px; padding: 22px;
+}
+.challenge h3 { margin: 0; font-size: 22px; }
+.prediction-form { display: flex; align-items: end; gap: 10px; }
+.prediction-form label { color: #858d9b; font-size: 11px; }
+.prediction-form input {
+  display: block; width: 150px; height: 44px; margin-top: 6px; border: 1px solid #343945;
+  background: #090b10; color: white; border-radius: 4px; padding: 0 12px;
+}
+.prediction-form button {
+  height: 44px; border: 0; background: #e10600; color: white; border-radius: 4px;
+  padding: 0 16px; font-weight: 800;
+}
+.prediction-form button:disabled { opacity: .45; cursor: not-allowed; }
+.challenge-controls { display: grid; justify-items: end; gap: 8px; }
+.prediction-status { max-width: 440px; margin: 0; color: #a4e6b0; font-size: 12px; text-align: right; }
+.prediction-status.error { color: #ffaaa5; }
+
+.leaderboard { padding: 10px 44px 44px; }
+.leader-row {
+  min-height: 58px; display: grid; grid-template-columns: 38px 44px 1fr auto;
+  align-items: center; border-bottom: 1px solid #20242d;
+}
+.position { color: #747d8b; }
+.avatar { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #252a35; overflow: hidden; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.leader-row strong { font-size: 14px; }
+.leader-row > span:last-child { color: #e10600; font-weight: 900; font-size: 13px; }
+
+@media (max-width: 800px) {
+  .nav { grid-template-columns: 1fr auto; padding: 0 18px; }
+  .year-switch { order: 3; grid-column: 1 / -1; justify-self: center; margin-top: 8px; }
+  .nav { height: 118px; }
+  .hero { padding: 38px 18px 30px; }
+  .hero-stat { display: none; }
+  .notice { margin-left: 18px; margin-right: 18px; }
+  .layout { grid-template-columns: 1fr; }
+  .layout aside { border-right: 0; border-bottom: 1px solid #20242d; }
+  .race-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .race-header, .challenge { margin-left: 18px; margin-right: 18px; padding-left: 18px; padding-right: 18px; }
+  .challenge { flex-direction: column; align-items: stretch; gap: 18px; }
+  .prediction-form input { width: 100%; }
+  .leaderboard { padding-left: 18px; padding-right: 18px; }
+  .lap-record { display: none; }
+}
